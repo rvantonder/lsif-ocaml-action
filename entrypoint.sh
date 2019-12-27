@@ -1,5 +1,6 @@
-#!/bin/bash -l -x
+#!/bin/bash -l
 
+set -x
 echo $(pwd)
 ls $(pwd)
 echo 'Doing opam'
@@ -8,4 +9,4 @@ opam pin add -y lsif-ocaml https://github.com/rvantonder/lsif-ocaml.git
 echo 'Dune build...'
 opam exec -- dune build
 opam config exec -- lsif-ocaml-dump
-opam config exec -- lsif-ocaml -only-type-hovers > dump.lsif
+opam config exec -- lsif-ocaml -only-type-hovers > data.lsif
