@@ -3,11 +3,14 @@
 set -x
 echo $(pwd)
 ls $(pwd)
-eval $(opam env) && \
-    opam pin add -y merlin-lsif https://github.com/rvantonder/merlin.git\#lsif && \
-    opam pin add -y lsif-ocaml https://github.com/rvantonder/lsif-ocaml.git
+whoami
+echo $PATH
+export PATH=/home/opam/.opam/4.09/bin:/usr/bin$PATH
+eval $(/usr/bin/opam env) && \
+    /usr/bin/opam pin add -y merlin-lsif https://github.com/rvantonder/merlin.git\#lsif && \
+    /usr/bin/opam pin add -y lsif-ocaml https://github.com/rvantonder/lsif-ocaml.git
 echo 'Dune build...'
-eval $(opam env) && \
+eval $(/usr/bin/opam env) && \
     dune build && \
     lsif-ocaml-dump && \
     lsif-ocaml -only-type-hovers > data.lsif
