@@ -1,0 +1,6 @@
+# action.yml
+name: 'Build comby'
+description: 'Builds comby using a base docker image with preinstalled dependencies'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
