@@ -1,4 +1,5 @@
-FROM ocaml/opam2:alpine-3.10-ocaml-4.09
+FROM ocaml/opam2:4.08
+# FROM ocaml/opam2:alpine-3.10-ocaml-4.09 # merlin-lsif build does not support 4.09 yet
 
 WORKDIR /build
 
