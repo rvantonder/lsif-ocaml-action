@@ -3,6 +3,8 @@ FROM ocaml/opam2:4.08
 
 WORKDIR /build
 
+RUN sudo apt-get install -y m4
+
 RUN eval $(opam env) && opam repository set-url default https://opam.ocaml.org && opam update
 
 RUN sudo chown -R $(whoami) /build
